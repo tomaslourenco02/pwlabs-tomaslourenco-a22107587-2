@@ -1,0 +1,100 @@
+<!-- web.html -->
+
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="webs">
+        <h2 class="titulo_seccao">Tecnologias</h2>
+        <div class="web_tec">
+            {% for tec in tecs %}
+                <div>
+                    <h3>{{tec.acronimo}} : {{tec.nome}}</h3>
+                    <a href="{{tec.link}}"><img class = "web_logos" src="{{tec.logotipo.url}}" width="100"></a>
+                    <br><br>
+                    <p>{{tec.descricao}}</p>
+                    <br>
+                    <p><b>Criador: </b>{{tec.criador}}</p>
+                    <p><b>Ano de criação: </b>{{tec.ano}}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="titulo_seccao">Notícias</h2>
+        <div class="web_noticia">
+            {% for noticia in noticias %}
+                <div>
+                    <h3>{{noticia.titulo}}</h3>
+                    <br>
+                    <button><a href="{{noticia.link}}"><img src="{{noticia.imagem.url}}" width="300"></a></button>
+                    <br><br>
+                    <p>{{noticia.texto}}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="titulo_seccao">Laboratórios</h2>
+        <div class="web_lab">
+            {% for lab in labs %}
+                <div>
+                    <h3>{{lab.titulo}}</h3>
+                    <br>
+                    <p>{{lab.descricao}}</p>
+                    <br>
+                    <button><a href="{{lab.link}}">{{lab.link}}</a></button>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="titulo_seccao">Sobre este website</h2>
+        <div class="web_tec">
+            {% for tec in tecs_usadas %}
+                <div>
+                    <h3>{{tec.acronimo}} : {{tec.nome}}</h3>
+                    <a href="{{tec.link}}"><img class = "web_logos" src="{{tec.logotipo.url}}" width="100"></a>
+                    <br><br>
+                    <p>{{tec.descricao}}</p>
+                    <br>
+                    <p><b>Criador: </b>{{tec.criador}}</p>
+                    <p><b>Ano de criação: </b>{{tec.ano}}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <h2 class="titulo_seccao">Diagrama DER</h2>
+        <div class="drawio">
+            {% load static %}
+                <img src="{% static 'portfolio/images/web.drawio.png' %}" width="750">
+        </div>
+
+    </div>
+    <div class="web_quizz">
+        <h2 class="titulo_seccao">Quizz</h2>
+        <form method="POST" action="quizz">
+            {% csrf_token %}
+            <fieldset title="info">
+                <Legend>Identificação</Legend>
+                    <label><b>Nome:</b><input type="text" name="nome" id="nome" multiple required placeholder="Escreva aqui" size="25"></label><br>
+                    <label><b>Apelido:</b><input type="text" name="apelido" id="apelido" required placeholder="Escreva aqui"></label><br>
+            </fieldset><br>
+            <fieldset title="perguntas">
+                <label>Qual a linguagem mais utilizada com o Python?</label>
+                <input type="text" name = "Django" id = "Django" size="20"><br><br>
+
+                <label>Qual a extenção responsável por estilizar o HTML?</label>
+                <input type="text" name = "CSS" id = "CSS" size="20"><br><br>
+
+                <label>Qual o servidor responsável para hospedar este portfolio?</label>
+                <input type="text" name = "Heroku" id = "Heroku" size="20"><br><br>
+
+                <label>Quem criou a linguagem JavaScript?</label>
+                <input type="text" name = "Brendan Eich" id = "Brendan Eich" size="20"><br><br>
+                <button class="new-btn"><input type="submit" alt="Submit" width="48" height="48"></button>
+            </fieldset>
+        </form>
+        {% load static %} 
+        <img src="{% static 'portfolio/images/grafico.png' %}">
+    </div>
+{% endblock %}

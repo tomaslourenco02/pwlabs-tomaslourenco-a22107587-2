@@ -1,0 +1,23 @@
+<!-- contactos.html -->
+
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="contactos">
+        <div class="contacto_nome"><p><b>Nome:</b> Tomás Moreira Pinto Loureço </p></div>
+        <div class="contacto_loc"><p><b>Localização:</b> Setúbal - Portugal </p></div>
+        <div class="contacto_email1"><p><b>Email Institucional:</b> a22107587@alunos.ulht.pt</p></div>
+        <div class="contacto_email2"><p><b>Email Pessoal:</b> tomaslourenco02@gmail.com</p></div>
+        <div class="contacto_tel"><p><b>Telemóvel:</b> +351 912651600</p></div>
+
+        <div class="icons">
+                <a href="https://www.linkedin.com/in/joaoantas05/"> {% load static %} <img src="{% static 'portfolio/images/linkedin.png' %}" width="35"></a>
+                <a href="https://github.com/joaoantas22002629/pw-labs-joaoantas-a22002629"> {% load static %} <img src="{% static 'portfolio/images/github.png' %}" width="35"></a>
+                <a href="mailto:joaoisidroantas@gmail.com"> {% load static %} <img src="{% static 'portfolio/images/gmail.png' %}" width="35"></a>
+        </div>
+    </div>
+{% endblock %}

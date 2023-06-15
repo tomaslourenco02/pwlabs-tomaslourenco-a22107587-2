@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .capitais {
+            display: flex;
+            Flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: space-around;
+            background-color: rgb(238, 248, 248);
+            padding: 50px;
+        }
+
+        .capitais>div {
+
+            display: flex;
+            justify-content: space-around;
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px #888888;
+            margin: 10px;
+        }
+
+        .capitais img {
+
+            border-radius: 20px 0 0 20px;
+            height: 100%;
+        }
+
+        .capitais div div:last-child {
+
+            width: 150px;
+            background-color: white;
+            padding: 20x;
+            border-radius: 0 20px 20px 0;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .circle {
+            width: 170px;
+            height: 170px;
+            background-color: rgb(83, 127, 209);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .circle img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .circle:hover img {
+            opacity: 1;
+        }
+
+        .circle span {
+            position: absolute;
+            opacity: 1;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+    <header class="sticky">
+        <h1>Cidades pelo mundo fora</h1>
+        <nav>
+            <ul>
+                <li><a href="#secao1">Imagem Aleatória</a></li>
+                <li><a href="#secao2">Cidades Europeias</a></li>
+                <li><a href="#secao3">Cidades Populares</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="">
+            <h2>Imagem Aleatória</h2>
+            <p>Imagem aleatória sobre ursos que sempre que se atualiza o website altera!</p>
+        </section>
+
+        <section id="">
+            <h2>Cidades Europeias</h2>
+            <p>Algumas das várias cidades de diversos países espalhados pela Europa!</p>
+        </section>
+
+        <section id="">
+            <h2>Cidades Populares</h2>
+            <p>Algumas das várias cidades de diversos países populares espalhados pela Europa!</p>
+        </section>
+    </main>
+</head>
+
+<body>
+    <div class="div1">
+        <p>
+            Viajar🤐
+        </p>
+    </div>
+    <section id="secao1">
+        <div class="div2">
+            <img src="https://source.unsplash.com/random/600×400/?panda" alt="panda aleatorio" class="imagem">
+
+        </div>
+    </section>
+    <div style="position:relative;">
+        <img src="https://source.unsplash.com/xg8z_KhSorQ/300x200" alt="paisagem" style="width: 100%; z-index: 1;">
+        <p style="position:absolute; top: 10px; left: 10px; color: yellow; z-index: 2;">Paisagem super bonita!</p>
+    </div>
+    <section id="secao2">
+        <div class="p">
+            <h1 class="p">Capitais Europeias</h1><br>
+        </div>
+        <div class=capitais>
+            <div>
+                <div><img src="imagens/bruxelas.avif" alt=""></div>
+                <div>
+                    <p class="p">Bruxelas</p>
+                </div>
+            </div>
+            <div>
+                <div><img src="imagens/lisboa.avif" alt=""></div>
+                <div>
+                    <p class="p">Lisboa</p>
+                </div>
+            </div>
+            <div>
+                <div><img src="imagens/roma.avif" alt=""></div>
+                <div>
+                    <p class="p">Roma</p>
+                </div>
+            </div>
+            <div>
+                <div><img src="imagens/paris.avif" alt=""></div>
+                <div>
+                    <p class="p">Paris</p>
+                </div>
+            </div>
+            <div>
+                <div><img src="imagens/praga.avif" alt=""></div>
+                <div>
+                    <p class="p">Praga</p>
+                </div>
+            </div>
+            <div>
+                <div><img src="imagens/varsovia.avif" alt=""></div>
+                <div>
+                    <p class="p">Varsovia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="secao3">
+        <div class="p2">
+            <h1>Cidades mais populares do mundo!</h1>
+        </div>
+        <div class="container">
+            <div class="circle">
+                <span>Nova York</span>
+                <img src="imagens/newyork.jpg" alt="newyork">
+            </div>
+            <div class="circle">
+                <span>Dubai</span>
+                <img src="imagens/dubai.jpg" alt="dubai">
+            </div>
+            <div class="circle">
+                <span>Rio de Janeiro</span>
+                <img src="imagens/rioDeJaneiro.jpg" alt="rioDeJaneiro">
+            </div>
+            <div class="circle">
+                <span>Los Angeles</span>
+                <img src="imagens/losAngeles.jpg" alt="losAngeles">
+            </div>
+            <div class="circle">
+                <span>Setúbal</span>
+                <img src="imagens/setubal.jpg" alt="setubal">
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

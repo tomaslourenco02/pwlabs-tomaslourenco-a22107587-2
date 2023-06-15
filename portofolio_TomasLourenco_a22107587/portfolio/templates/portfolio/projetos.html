@@ -1,0 +1,53 @@
+<!-- projetos.html -->
+
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
+{% endblock %}
+
+{% block main %}
+<h1 class="titulo_seccao">Projetos</h1>
+    <div class="projects">
+        {% for projeto in projetos %}
+            <div>
+                <h3>{{projeto.titulo}}</h3>
+                <br>
+                <button><a href="{{projeto.linkgithub}}"><img src="{{projeto.imagem.url}}" width="200"></a></button>
+                <br><br>
+                <p>{{projeto.descricao}}</p>
+                <p><b>Tecnologia(s): </b></p>
+                {% for linguagem in projeto.tecnologia.all %}
+                <il>{{linguagem}}</il>
+                {% endfor %}
+                <p><b>Autor(es): </b>{{projeto.participantes}}</p>
+                <p><b>UC: </b>{{projeto.cadeira}}</p>
+                <p><b>Ano: </b>{{projeto.ano}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+<h1 class="titulo_seccao">Trabalhos Final de Curso</h1>
+    <div class="tfc">
+        {% for tfc in tfcs %}
+            <div>
+                <h3>{{tfc.titulo}}</h3>
+                <br>
+                <p><b>Autor: </b>{{tfc.autor}}</p>
+                {% for orientador in tfc.orientador.all %}
+                    <p><b>Orientador: </b>{{orientador.nome}}</p>
+                {% endfor %}
+                <br>
+                <button><a href="{{tfc.linkGitHub}}"><img src="{{tfc.imagem.url}}" width="200"></a></button>
+                <br><br>
+                <a href="{{tfc.linkYoutube}}"> LinkYoutube</a>
+                <br>
+                <a href="{{tfc.linkRelatorio}}"> LinkRelatorio</a>
+                <br><br>
+                <p>{{tfc.sumario}}</p>
+                <br>
+                <p><b>Ano: </b>{{tfc.ano}}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

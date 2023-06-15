@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		/* Estilos para a página */
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+        
+        /* Estilos para o cabeçalho */
+		#header {
+			background-image: url(multimédia/Blue-Total-Blur-Color-Abstract-HD-Animated-Background-153-GIF.gif);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+            animation: background-scroll 10s linear infinite alternate-reverse;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+        
+@keyframes background-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+		
+		#header h1 {
+			font-size: 48px;
+			font-weight: bold;
+			color: #fff;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			margin-bottom: 20px;
+		}
+		
+		#header p {
+			font-size: 24px;
+			color: #fff;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			margin-bottom: 40px;
+		}
+		
+		/* Estilos para o efeito de transição de cor */
+		#header:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.4);
+			z-index: -1;
+			transition: all 0.5s ease-in-out;
+		}
+		
+		/* Estilos para o efeito de transição de cor quando o mouse passa sobre o cabeçalho */
+		#header:hover:after {
+			background: rgba(0, 0, 0, 0);
+		}
+		
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 10px;
+		}
+		
+		h1 {
+			font-size: 36px;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		
+		/* Estilos para os produtos */
+		.product {
+			display: flex;
+			flex-wrap:calc();
+			justify-content: space-between;
+		}
+		
+		.product-card {
+			width: 31%;
+			background-color: #fff;
+			margin-bottom: 40px;
+			box-shadow: 0 4px 8px rgba(9, 6, 74, 0.221);
+			border-radius: 4px;
+			overflow: hidden;
+		}
+		
+		.product-card img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			object-position: center;
+		}
+		
+		.product-card h2 {
+			font-size: 24px;
+			margin: 20px;
+			text-align: center;
+		}
+		
+		.product-card p {
+			font-size: 18px;
+			margin: 0 20px 20px 20px;
+			text-align: center;
+		}
+		
+		.product-card button {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			background-color: #4cafa5;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			font-size: 16px;
+			transition: all 0.3s ease-in-out;
+		}
+		
+		.product-card button:hover {
+			background-color: #3e4f8e;
+		}
+		
+		/* Estilos para o rodapé */
+		footer {
+			background-color: #17124b;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			margin-top: 40px;
+		}
+		
+	</style>
+</head>
+<body>
+    <header id="header">
+		<div>
+			<h1>Bem-Vindo</h1>
+			<p>Neste site poderás escolher a tua camisola do DEISI !!</p>
+		</div>
+	</header>
+<main>
+	<div class="container">		
+		<div class="product">
+			<div class="product-card">
+				<img src="https://via.placeholder.com/300x300.png?text=Camisola+1" alt="Camisola 1">
+				<h2>Engenharia Informática                </h2>
+                <p>
+                </p>
+				<button>ver mais...</button>
+			</div>
+			
+			<div class="product-card">
+				<img src="https://via.placeholder.com/300x300.png?text=Camisola+2" alt="Camisola 2">
+				<h2>DEISI</h2>
+				<button>ver mais...</button>
+			</div>
+            
+            <div class="product-card">
+				<img src="https://via.placeholder.com/300x300.png?text=Camisola+2" alt="Camisola 2">
+				<h2>Engenharia Informática, RT</h2>
+				<button>ver mais...</button>
+			</div>
+			
+			<div class="product-card">
+				<img src="https://via.placeholder.com/300x300.png?text=Camisola+3" alt="Camisola 3">
+                <h2>Informática de Gestão</h2>
+                <p></p>
+                <button>ver mais...</button>
+                </div>
+                </div>
+            </div>
+        </main>
+
+            <footer>
+                <p>Copyright &copy; 2023. Todos os direitos reservados.
+            </footer>
+        </body>
+        </html>            

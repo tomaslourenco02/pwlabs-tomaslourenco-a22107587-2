@@ -1,0 +1,28 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        {% for new in news %}
+            <div>
+                <br>
+                <h2>{{new.titulo}}</h2><br>
+                <img src="{{new.imagem.url}}" width="200">
+                <p><b>Autor: </b>{{new.autor}}</p>
+                <br>
+                <p>{{new.descricao}}</p><br>
+                <button><a href="{{new.link}}">{{new.link}}</a></button>
+                <!--<p>{{new.data}}</p>-->
+                {% if user.is_authenticated %}
+                <button class="edit-btn"><a href="{% url 'portfolio:blog_editar' new.id %}">Editar</a></button>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <button class="new-btn"><a href="{% url 'portfolio:blog_novo' %}" >+ Nova New</a></button>
+{% endblock %}

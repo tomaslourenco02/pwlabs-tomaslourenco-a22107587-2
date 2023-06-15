@@ -1,0 +1,75 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h1 class="titulo_seccao">Educação</h1>
+        <div class="formacao">
+            {% for education in educations %}
+                        <div>
+                            <div class="imagem_formacao">
+                                <img src="{{education.imagem.url}}" width="300"></a>
+                                <img src="{{education.logotipo.url}}" class="logo" ></a>
+                            </div>
+                            <h3>{{education.formacao}}</h3>
+                            <h4>{{education.curso}} | {{education.periodo}}</h4>
+                            <p><b>Local: </b>{{education.local}}</p>
+                            <br>
+                            <p>{{education.topicos}}</p>
+                        </div>
+            {% endfor %}
+        </div>
+
+    <h1 class="titulo_seccao">Unidades Curriculares</h1>
+    <div class="licenciatura">
+            {% for chair in chairs %}
+                    <div>
+                        <h3><u><a href="{{chair.link_cadeira}}" class="titulo">{{chair.nome}}</a></u></h3>
+                        <p><b>ECTS: </b>{{chair.ects}}</p>
+                        <p><b>Ano: </b>{{chair.ano}}</p>
+                        <p><b>Semestre: </b>{{chair.semestre}}</p>
+                        <p><b>Ano Letivo: </b> {{chair.ano_letivo}}</p>
+                        <p><b>Tópicos abordados: </b>{{chair.topicos_abordados}}</p>
+                        <p><b>Linguagens: </b> {% for language in chair.linguagens.all %} {{language.nome}};{% endfor %}</p>
+                        <p><b>Ranking (0-5): </b>{{chair.ranking}}</p>
+                        <p><b>Docente Teórica: </b><a href="{{chair.docente_teorica.linklusofona}}" class="titulo">{{chair.docente_teorica.nome}}</a></p>
+                        <p><b>Docente(s) Práticas: </b> {% for docente_pratica in chair.docentes_praticas.all %}<a href="{{docentes_praticas.linklusofona}}" class="titulo"> {{docente_pratica.nome}}</a> / {% endfor %}</p>
+                        <b>Projetos: </b>
+                    {% for projeto in chair.projetos.all %}
+                        <a href="{% url 'portfolio:projetos' %}" class="titulo">{{projeto.titulo}}</a>; 
+                    {% endfor %}
+                    </div>
+            {% endfor %}
+    </div>
+
+    <h1 class="titulo_seccao">Competências</h1>
+    <br>
+        <div class="competencias">
+            <p>O curso de licenciatura em Engenharia Informática da Universidade Lusófona desenvolve
+            perfis com fortes competências tecnológicas e humanas, de forma a potênciar aos seus
+            licenciados um elevado grau de empregabilidade, ou o prosseguimento dos estudos de 2º ciclo 
+            com excelentes perspectivas de sucesso.</p>
+        </div>
+    <br>
+    <h1 class="titulo_seccao">Línguas</h1>
+    <div class="linguas1">
+        <div class="linguas"> <p><b>Inglês - Língua Nativa</b></p> </div>
+        <div class="linguas"> <p><b>Português - B-Preliminary</b></p> </div>
+        <div class="linguas"> <p><b>Espanhol - Nível Básico</b></p> </div>
+    </div>
+    <div class="hobbies">
+        <h1 class="titulo_seccao">Hobbies</h1>
+        <div class="desportos"> <p><b>Padel</b></p>
+        {% load static %}
+            <img src="{% static 'portfolio/images/padel.png' %}" width="200">
+        </div>
+        <div class="desportos"> <p><b>Voluntariado - Gestor de Turno</b></p>
+        {% load static %}
+            <img src="{% static 'portfolio/images/refood.jpeg' %}" width="200">
+        </div>
+    </div>
+{% endblock %}

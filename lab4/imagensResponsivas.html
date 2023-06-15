@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Imagens Responsivas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Imagens Responsivas</h1>
+    <img src="imagens/setubal.jpg" 
+         srcset="imagens/setubal2.jpg 480w, imagens/setubal3.jpg 768w, imagens/setubal4.jpg 1200w" 
+         sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33.3vw">
+  </body>
+</html>
